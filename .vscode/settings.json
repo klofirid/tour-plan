@@ -7,5 +7,12 @@
     }
   ],
   "editor.insertSpaces": true,
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+
+  // После каждого коммита VS Code сам выполнит git push на GitHub
+  "git.postCommitCommand": "push",
+  // Если ничего не добавлено в staging — закоммитить сразу все изменения (без ручного "+")
+  "git.enableSmartCommit": true,
+  // Периодически подтягивать состояние с GitHub, чтобы индикатор ahead/behind был актуальным
+  "git.autofetch": true
 }
