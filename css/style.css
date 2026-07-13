@@ -548,7 +548,7 @@ template {
     max-width: 576px;
     width: 92%;
   }
-  .navbar-search, .navbar_user, .navbar-menu {
+  .navbar_search, .navbar_user, .navbar-menu {
     display: none;
   }
   .menu-button {
@@ -567,6 +567,27 @@ template {
     width: 16px;
     height: 1px;
     background-color: #333333;
+  }
+  .stars {
+    flex-basis: content;
+  }
+  .hotel-name {
+    flex-basis: 100%;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  .hotel-wrapper {
+    justify-content: space-between;
+  }
+  .hotel-info_text {
+    width: 100%;
+  }
+  .hotel-info_rating {
+    display: none;
+  }
+  .hotel-info_offer {
+    order: -1;
+    margin-left: 0;
   }
 }
 @media (max-width: 576px) {
