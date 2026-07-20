@@ -1,5 +1,5 @@
 const swiper = new Swiper('.swiper', {
-  loop: false,  // ← отключаем зацикливание
+  loop: true,
   slidesPerView: 1,
   spaceBetween: 0,
   speed: 300,
@@ -9,16 +9,17 @@ const swiper = new Swiper('.swiper', {
     prevEl: '.slider-button-prev',
   },
   
+  // Управление с клавиатуры
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+    pageUpDown: true,
+  },
+  
+  // Автообновление
   watchSlidesProgress: true,
   watchSlidesVisibility: true,
   
-  // Автоматически обновляет при изменении DOM
   observer: true,
   observeParents: true,
-  
-  // Дополнительно: автовысота (опционально)
-  // autoHeight: false,
-  
-  // Отключаем эффект наложения
-  effect: 'slide',
 });
