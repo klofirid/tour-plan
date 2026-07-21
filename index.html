@@ -12,8 +12,8 @@
     href="https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -29,19 +29,19 @@
     <div class="container">
       <div class="navbar-top">
         <a href="a" class="logo">
-          <img src="/img/horizont-logo.svg" alt="logo: Best Tour Plan" class="logo_image">
+          <img src="img/horizont-logo.svg" alt="logo: Best Tour Plan" class="logo_image">
         </a>
 
         <form action="#" class="search navbar_search">
           <input type="text" class="search_input" placeholder="Search Location">
           <button class="search_button">
-            <img src="/img/search.svg" alt="Icon: Search">
+            <img src="img/search.svg" alt="Icon: Search">
           </button>
         </form>
 
         <a href="#" class="user navbar_user">
           <img 
-          src="/img/user_avatar.jpg" 
+          src="img/user_avatar.jpg" 
           alt="Avatar: Nathan" 
           class="user_avatar">
           <span class="user_name">Nathan</span>
@@ -125,29 +125,79 @@
         <!-- /.hotel-info_rating -->
       </div>
       <!-- /.hotel-info-->
-       <div class="hotel-grid">
+      <div class="hotel-grid">
         <div class="slider">
           <!-- Slider main container -->
-<div class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide"><img src="img/slide.jpg" alt="slide"></div>
-    <div class="swiper-slide"><img src="img/slide.jpg" alt="slide"></div>
-    <div class="swiper-slide"><img src="img/slide.jpg" alt="slide"></div>
-    ...
-  </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><img src="img/slide.jpg" alt="slide"></div>
+              <div class="swiper-slide"><img src="img/slide.jpg" alt="slide"></div>
+              <div class="swiper-slide"><img src="img/slide.jpg" alt="slide"></div>
+              ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
 
-  <!-- If we need navigation buttons -->
-  <button class="slider-button slider-button-prev"></button>
-  <button class="slider-button slider-button-next"></button>
-  <!--button--/.swiper-container-->
-</div>
+            <!-- If we need navigation buttons -->
+            <button class="slider-button slider-button-prev"></button>
+            <button class="slider-button slider-button-next"></button>
+            <!--button--/.swiper-container-->
+          </div>
+          <!--slider-->
         </div>
-       </div>
-       <!-- /.hotel-grid -->
+        <div class="hotel-right">
+        <!-- /.hotel-right -->
+        <div class="booking">
+          <div class="booking__info">
+            <div class="booking__price">
+              <span class="booking__start">price start as</span>
+              <strong class="booking__pricetag">$ 8,500</strong>
+              <span class="booking__per-room">per room / night</span>
+            </div>
+            <!-- /.price -->
+            <div class="booking__rooms">
+              <div class="booking__room">
+                <img src="img/user.svg" alt="icon: user" class="booking__icon">
+                <span class="booking__description">2 x Guests</span>
+              </div>
+              <div class="booking__room">
+                <img src="img/home.svg" alt="icon: home" class="booking__icon">
+                <span class="booking__description">1 x Room</span>
+              </div>
+            </div>
+            <!-- /.booking__rooms -->
+          </div>
+          <!-- /.booking__info -->
+          <div class="booking__call-center">
+            <span class="booking__heading">Quick Booking</span>
+            <a class="booking__number" href="tel:12100">
+              <img src="img/call.svg" alt="icon:phone">
+              <span class="booking__num">12100</span>
+            </a>
+            <!-- /.booking__call-text -->
+          </div>
+          <!-- /.booking__call-center -->
+          <button class="button booking__button">View Other Options</button>
+        </div>
+        <!-- /.booking -->
+        <div class="map">
+          <iframe
+            class="map__frame"
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A6cf745908c1a39f3574ec35a3aa84e46aa576ad27a88d85749adfc12e741aa49&amp;source=constructor"
+            width="347"
+            height="213"
+            frameborder="0"
+            title="Yandex map"
+            loading="lazy">
+          </iframe>
+        </div>
+        <!-- /.map -->
+      </div>
+      <!-- /.hotel-grid -->
+    </div>
+    <!--hotel right-->
     </div>
     <!-- /.container -->
    </section>
