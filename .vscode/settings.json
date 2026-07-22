@@ -8,6 +8,15 @@
   ],
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "[sass]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false
+  },
 
   // После каждого коммита VS Code сам выполнит git push на GitHub
   "git.postCommitCommand": "push",
