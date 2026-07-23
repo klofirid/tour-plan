@@ -1,0 +1,18 @@
+.reviews-slider__text {
+  text-align: center !important;
+}
+
+.reviews-slider__button {
+  top: calc(50% + 22px) !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  filter: brightness(0) saturate(100%) !important;
+}
+
+.reviews-slider__button--prev {
+  left: 42px !important;
+}
+
+.reviews-slider__button--next {
+  right: 42px !important;
+}

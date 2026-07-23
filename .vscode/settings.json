@@ -12,6 +12,14 @@
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.executorMap": {
+    "html": "cd \"$workspaceRoot\" && npx --yes prettier@3.6.2 --write \"$fullFileName\""
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
   "[sass]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,

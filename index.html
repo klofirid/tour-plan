@@ -1,220 +1,347 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best tour Plan - Hotel Booking</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Best tour Plan - Hotel Booking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-    rel="stylesheet">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/overrides.css" />
+  </head>
 
-  <link rel="stylesheet" href="css/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
+  <body>
+    <!-- SVG-спрайт: встроен инлайном, чтобы <use href="#star"> работал без отдельного файла (в т.ч. из file://). Сам блок скрыт. -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+      aria-hidden="true"
+    >
+      <symbol id="star" viewBox="0 0 8 8">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M4.00005 0.333328C4.12692 0.333328 4.2428 0.405352 4.29895 0.51912L5.25147 2.44882L7.38159 2.76017C7.50711 2.77851 7.61134 2.86652 7.65047 2.98718C7.68959 3.10785 7.65683 3.24027 7.56596 3.32878L6.02489 4.82978L6.38859 6.95031C6.41004 7.07538 6.35862 7.20177 6.25596 7.27635C6.1533 7.35092 6.0172 7.36075 5.9049 7.30169L4.00005 6.29994L2.0952 7.30169C1.9829 7.36075 1.8468 7.35092 1.74414 7.27635C1.64148 7.20177 1.59006 7.07538 1.61151 6.95031L1.97521 4.82978L0.434139 3.32878C0.343267 3.24027 0.310509 3.10785 0.349635 2.98718C0.388761 2.86652 0.492988 2.77851 0.618508 2.76017L2.74863 2.44882L3.70115 0.51912C3.7573 0.405352 3.87318 0.333328 4.00005 0.333328ZM4.00005 1.41975L3.26895 2.90087C3.22044 2.99915 3.12671 3.06731 3.01826 3.08316L1.38285 3.3222L2.56596 4.47454C2.64459 4.55112 2.68047 4.6615 2.66192 4.76968L2.38278 6.39722L3.8449 5.6283C3.94203 5.57723 4.05807 5.57723 4.1552 5.6283L5.61732 6.39722L5.33818 4.76968C5.31963 4.6615 5.35552 4.55112 5.43414 4.47454L6.61725 3.3222L4.98184 3.08316C4.87339 3.06731 4.77966 2.99915 4.73115 2.90087L4.00005 1.41975Z"
+          fill="currentColor"
+        />
+        <path
+          d="M2.33333 5L1 3L3 2.66667L4 1L5 2.66667L7 3.33333L5.66667 4.66667L6 7L4 6L2 7L2.33333 5Z"
+          fill="currentColor"
+        />
+      </symbol>
+    </svg>
 
-<body>
-  <!-- SVG-спрайт: встроен инлайном, чтобы <use href="#star"> работал без отдельного файла (в т.ч. из file://). Сам блок скрыт. -->
-  <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0; overflow: hidden" aria-hidden="true">
-    <symbol id="star" viewBox="0 0 8 8">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.00005 0.333328C4.12692 0.333328 4.2428 0.405352 4.29895 0.51912L5.25147 2.44882L7.38159 2.76017C7.50711 2.77851 7.61134 2.86652 7.65047 2.98718C7.68959 3.10785 7.65683 3.24027 7.56596 3.32878L6.02489 4.82978L6.38859 6.95031C6.41004 7.07538 6.35862 7.20177 6.25596 7.27635C6.1533 7.35092 6.0172 7.36075 5.9049 7.30169L4.00005 6.29994L2.0952 7.30169C1.9829 7.36075 1.8468 7.35092 1.74414 7.27635C1.64148 7.20177 1.59006 7.07538 1.61151 6.95031L1.97521 4.82978L0.434139 3.32878C0.343267 3.24027 0.310509 3.10785 0.349635 2.98718C0.388761 2.86652 0.492988 2.77851 0.618508 2.76017L2.74863 2.44882L3.70115 0.51912C3.7573 0.405352 3.87318 0.333328 4.00005 0.333328ZM4.00005 1.41975L3.26895 2.90087C3.22044 2.99915 3.12671 3.06731 3.01826 3.08316L1.38285 3.3222L2.56596 4.47454C2.64459 4.55112 2.68047 4.6615 2.66192 4.76968L2.38278 6.39722L3.8449 5.6283C3.94203 5.57723 4.05807 5.57723 4.1552 5.6283L5.61732 6.39722L5.33818 4.76968C5.31963 4.6615 5.35552 4.55112 5.43414 4.47454L6.61725 3.3222L4.98184 3.08316C4.87339 3.06731 4.77966 2.99915 4.73115 2.90087L4.00005 1.41975Z" fill="currentColor"/>
-      <path d="M2.33333 5L1 3L3 2.66667L4 1L5 2.66667L7 3.33333L5.66667 4.66667L6 7L4 6L2 7L2.33333 5Z" fill="currentColor"/>
-    </symbol>
-  </svg>
-
-  <header class="navbar">
-    <div class="container">
-      <div class="navbar-top">
-        <a href="a" class="logo">
-          <img src="img/horizont-logo.svg" alt="logo: Best Tour Plan" class="logo_image">
-        </a>
-
-        <form action="#" class="search navbar_search">
-          <input type="text" class="search_input" placeholder="Search Location">
-          <button class="search_button">
-            <img src="img/search.svg" alt="Icon: Search">
-          </button>
-        </form>
-
-        <a href="#" class="user navbar_user">
-          <img
-          src="img/user_avatar.jpg"
-          alt="Avatar: Nathan"
-          class="user_avatar">
-          <span class="user_name">Nathan</span>
-        </a>
-        <!-- /.user -->
-         <button class="menu-button navbar-top_menu-button">
-          <span class="menu-button_line"></span>
-          <span class="menu-button_line"></span>
-          <span class="menu-button_line"></span>
-         </button>
-      </div>
-      <!-- /.navbar-top -->
-    </div>
-    <!-- /.container -->
-
-    <div class="navbar-bottom">
+    <header class="navbar">
       <div class="container">
-        <ul class="navbar-menu">
-          <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">All Deals</a></li>
-          <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">Hotels</a></li>
-          <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">Activities</a></li>
-          <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">Hotel Day Packages</a></li>
-          <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">Restaurants</a></li>
-          <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">Events</a></li>
-          <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">Rodrigues</a></li>
+        <div class="navbar-top">
+          <a href="a" class="logo">
+            <img src="img/horizont-logo.svg" alt="logo: Best Tour Plan" class="logo_image" />
+          </a>
+
+          <form action="#" class="search navbar_search">
+            <input type="text" class="search_input" placeholder="Search Location" />
+            <button class="search_button">
+              <img src="img/search.svg" alt="Icon: Search" />
+            </button>
+          </form>
+
+          <a href="#" class="user navbar_user">
+            <img src="img/user_avatar.jpg" alt="Avatar: Nathan" class="user_avatar" />
+            <span class="user_name">Nathan</span>
+          </a>
+          <!-- /.user -->
+          <button class="menu-button navbar-top_menu-button">
+            <span class="menu-button_line"></span>
+            <span class="menu-button_line"></span>
+            <span class="menu-button_line"></span>
+          </button>
+        </div>
+        <!-- /.navbar-top -->
+      </div>
+      <!-- /.container -->
+
+      <div class="navbar-bottom">
+        <div class="container">
+          <ul class="navbar-menu">
+            <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">All Deals</a></li>
+            <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">Hotels</a></li>
+            <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">Activities</a></li>
+            <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">Hotel Day Packages</a></li>
+            <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">Restaurants</a></li>
+            <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">Events</a></li>
+            <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">Rodrigues</a></li>
+          </ul>
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /.navbar-bottom -->
+    </header>
+    <nav class="breadcrumb">
+      <div class="container">
+        <ul class="breadcrumb-list">
+          <li class="breadcrumb-list_item">
+            <a href="#" class="breadcrumb-list_link">Home</a>
+          </li>
+          <li class="breadcrumb-list_item">
+            <a href="#" class="breadcrumb-list_link">Flash Offers</a>
+          </li>
+          <li class="breadcrumb-list_item">Grand Hilton Hotel</li>
         </ul>
       </div>
       <!-- /.container -->
-    </div>
-    <!-- /.navbar-bottom -->
-  </header>
-  <nav class="breadcrumb">
-    <div class="container">
-      <ul class="breadcrumb-list">
-      <li class="breadcrumb-list_item">
-        <a href="#" class="breadcrumb-list_link">Home</a>
-      </li>
-      <li class="breadcrumb-list_item">
-        <a href="#" class="breadcrumb-list_link">Flash Offers</a>
-      </li>
-      <li class="breadcrumb-list_item">
-        Grand Hilton Hotel
-      </li>
-    </ul>
-    </div>
-    <!-- /.container -->
-  </nav>
-  <!-- /.breadcrumb -->
-   <section class="hotel">
-    <div class="container">
-      <div class="hotel-info">
-        <div class="hotel-info_text">
-          <div class="hotel-wrapper">
-            <div class="stars" role="img" aria-label="Rating: 5 out of 5 stars">
-            <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
-              <use href="#star"></use>
-            </svg>
-            <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
-              <use href="#star"></use>
-            </svg>
-            <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
-              <use href="#star"></use>
-            </svg>
-            <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
-              <use href="#star"></use>
-            </svg>
-            <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
-              <use href="#star"></use>
-            </svg>
+    </nav>
+    <!-- /.breadcrumb -->
+    <section class="hotel">
+      <div class="container">
+        <div class="hotel-info">
+          <div class="hotel-info_text">
+            <div class="hotel-wrapper">
+              <div class="stars" role="img" aria-label="Rating: 5 out of 5 stars">
+                <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                  <use href="#star"></use>
+                </svg>
+                <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                  <use href="#star"></use>
+                </svg>
+                <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                  <use href="#star"></use>
+                </svg>
+                <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                  <use href="#star"></use>
+                </svg>
+                <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                  <use href="#star"></use>
+                </svg>
+              </div>
+              <h1 class="hotel-name hotel-info_name">GRAND HILTON HOTEL</h1>
+              <span class="offer hotel-info_offer">Flash Offer</span>
+            </div>
+            <p class="hotel-description hotel-info_description">
+              Half-Board/ All Inclusive + Complimentary Activities + Child Stays Free
+            </p>
           </div>
-          <h1 class="hotel-name hotel-info_name">GRAND HILTON HOTEL</h1>
-          <span class="offer hotel-info_offer">Flash Offer</span>
+          <!-- /.hotel-info_text -->
+          <div class="rating hotel-info_rating">
+            <span class="rating_text">User Ratting</span>
+            <span class="rating_counter">4.5/5</span>
           </div>
-          <p class="hotel-description hotel-info_description">Half-Board/ All Inclusive + Complimentary Activities + Child Stays Free</p>
+          <!-- /.hotel-info_rating -->
         </div>
-        <!-- /.hotel-info_text -->
-        <div class="rating hotel-info_rating">
-          <span class="rating_text">User Ratting</span>
-          <span class="rating_counter">4.5/5</span>
-        </div>
-        <!-- /.hotel-info_rating -->
-      </div>
-      <!-- /.hotel-info-->
-      <div class="hotel-grid">
-        <div class="slider hotel__lider">
+        <!-- /.hotel-info-->
+        <div class="hotel-grid">
           <!-- Slider main container -->
-          <div class="swiper">
+          <div class="swiper hotel-slider hotel__slider">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <!-- Slides -->
-              <div class="swiper-slide"><img src="img/slide.jpg" alt="slide"></div>
-              <div class="swiper-slide"><img src="img/slide.jpg" alt="slide"></div>
-              <div class="swiper-slide"><img src="img/slide.jpg" alt="slide"></div>
-              ...
+              <div class="swiper-slide"><img src="img/slide-1.jpeg" alt="slide" /></div>
+              <div class="swiper-slide"><img src="img/slide-2.jpeg" alt="slide" /></div>
+              <div class="swiper-slide"><img src="img/slide-3.jpeg" alt="slide" /></div>
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-
             <!-- If we need navigation buttons -->
-            <button class="slider-button slider-button-prev"></button>
-            <button class="slider-button slider-button-next"></button>
+            <button class="hotel-slider__button hotel-slider__button--prev" type="button"></button>
+            <button class="hotel-slider__button hotel-slider__button--next" type="button"></button>
             <!--button--/.swiper-container-->
           </div>
-          <!--slider-->
-        </div>
-        <div class="hotel-right">
-        <!-- /.hotel-right -->
-        <div class="booking">
-          <div class="booking__info">
-            <div class="booking__price">
-              <span class="booking__start">price start as</span>
-              <strong class="booking__pricetag">$ 8,500</strong>
-              <span class="booking__per-room">per room / night</span>
-            </div>
-            <!-- /.price -->
-            <div class="booking__rooms">
-              <div class="booking__room">
-                <img src="img/user.svg" alt="icon: user" class="booking__icon">
-                <span class="booking__description">2 x Guests</span>
+          <div class="hotel-right">
+            <!-- /.hotel-right -->
+            <div class="booking">
+              <div class="booking__info">
+                <div class="booking__price">
+                  <span class="booking__start">price start as</span>
+                  <strong class="booking__pricetag">$ 8,500</strong>
+                  <span class="booking__per-room">per room / night</span>
+                </div>
+                <!-- /.price -->
+                <div class="booking__rooms">
+                  <div class="booking__room">
+                    <img src="img/user.svg" alt="icon: user" class="booking__icon" />
+                    <span class="booking__description">2 x Guests</span>
+                  </div>
+                  <div class="booking__room">
+                    <img src="img/home.svg" alt="icon: home" class="booking__icon" />
+                    <span class="booking__description">1 x Room</span>
+                  </div>
+                </div>
+                <!-- /.booking__rooms -->
               </div>
-              <div class="booking__room">
-                <img src="img/home.svg" alt="icon: home" class="booking__icon">
-                <span class="booking__description">1 x Room</span>
+              <!-- /.booking__info -->
+              <div class="booking__call-center">
+                <span class="booking__heading">Quick Booking</span>
+                <a class="booking__number" href="tel:12100">
+                  <img src="img/call.svg" alt="icon:phone" />
+                  <span class="booking__num">12100</span>
+                </a>
+                <!-- /.booking__call-text -->
               </div>
+              <!-- /.booking__call-center -->
+              <button class="button booking__button">View Other Options</button>
             </div>
-            <!-- /.booking__rooms -->
+            <!-- /.booking -->
+            <div class="map">
+              <iframe
+                class="map__frame"
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A6cf745908c1a39f3574ec35a3aa84e46aa576ad27a88d85749adfc12e741aa49&amp;source=constructor"
+                width="100%"
+                height="213"
+                frameborder="0"
+                title="Yandex map"
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+            <!-- /.map -->
           </div>
-          <!-- /.booking__info -->
-          <div class="booking__call-center">
-            <span class="booking__heading">Quick Booking</span>
-            <a class="booking__number" href="tel:12100">
-              <img src="img/call.svg" alt="icon:phone">
-              <span class="booking__num">12100</span>
-            </a>
-            <!-- /.booking__call-text -->
-          </div>
-          <!-- /.booking__call-center -->
-          <button class="button booking__button">View Other Options</button>
+          <!-- /.hotel-grid -->
         </div>
-        <!-- /.booking -->
-        <div class="map">
-          <iframe
-            class="map__frame"
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3A6cf745908c1a39f3574ec35a3aa84e46aa576ad27a88d85749adfc12e741aa49&amp;source=constructor"
-            width="100%"
-            height="213"
-            frameborder="0"
-            title="Yandex map"
-            loading="lazy">
-          </iframe>
-        </div>
-        <!-- /.map -->
+        <!--hotel right-->
       </div>
-      <!-- /.hotel-grid -->
-    </div>
-    <!--hotel right-->
-    </div>
-    <!-- /.container -->
-   </section>
-   <section class="newsletter">
-    <div class="newsletter-wrapper">
-      <h2 class="newsletter-title newsletter__title"> subscribe to our
-      <span class="newsletter-title__strong">Newsletter</span>
-      </h2>
-      <form action="#" class="subscribe newsletter_subscribe">
-          <input type="text" class="subscribe__input" placeholder="Your email address">
-          <button class="subscribe__button">Send</button>
-        </form>
-    </div>
-    <!-- /.newsletter-wrapper -->
-   </section>
-   <script src="js/swiper-bundle.min.js"></script>
-   <script src="js/main.js"></script>
-  </body>
+      <!-- /.container -->
+    </section>
+    <section class="reviews">
+      <div class="container">
+        <h2 class="section-title">What cats thinks about us</h2>
+        <div class="swiper reviews-slider">
+          <div class="swiper-wrapper">
+            <!--  Slide 1  -->
+            <div class="swiper-slide">
+              <div class="reviews-slider__item">
+                <div class="reviews-slider__profile">
+                  <img src="img/reviews-avatar.jpeg" alt="Photo: cat" class="reviews-slider__avatar" />
+                  <h3 class="reviews-slider__username">Vonu4ka</h3>
+                  <span class="reviews-slider__date">Stayed 18 Nov, 2023</span>
+                  <div class="stars" role="img" aria-label="Rating: 5 out of 5 stars">
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                  </div>
+                </div>
+                <!-- /.reviews-slider__profile -->
+                <p class="reviews-slider__text">
+                  Мяу... Ну, если честно, я придирчивый. Но здесь мне понравилось. Еда — отличная, люди — не надоедают,
+                  диван — мягкий. Даже солнце было в нужное время. Ладно, ставлю 4 лапы из 5. Но это не точно.
+                </p>
+              </div>
+              <!-- /.reviews-slider__item -->
+            </div>
+            <!-- /.swiper-slide -->
+            <!-- Slide 2  -->
+            <div class="swiper-slide">
+              <div class="reviews-slider__item">
+                <div class="reviews-slider__profile">
+                  <img src="img/reviews-avatar2.jpeg" alt="Photo: cat" class="reviews-slider__avatar" />
+                  <h3 class="reviews-slider__username">Bordgia</h3>
+                  <span class="reviews-slider__date">Stayed 3 Dec, 2023</span>
+                  <div class="stars" role="img" aria-label="Rating: 5 out of 5 stars">
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                  </div>
+                </div>
+                <!-- /.reviews-slider__profile -->
+                <p class="reviews-slider__text">
+                  Мур-мур! Обожаю это место! Кормят 5 раз в день, чешут за ушком, дают вкусняшки. Единственное —
+                  хотелось бы больше коробок для игр. Но и так отлично! 5 звёзд 🌟
+                </p>
+              </div>
+              <!-- /.reviews-slider__item -->
+            </div>
+            <!-- /.swiper-slide -->
+            <!--  Slide 3   -->
+            <div class="swiper-slide">
+              <div class="reviews-slider__item">
+                <div class="reviews-slider__profile">
+                  <img src="img/reviews-avatar3.jpeg" alt="Photo: cat" class="reviews-slider__avatar" />
+                  <h3 class="reviews-slider__username">Soset</h3>
+                  <span class="reviews-slider__date">Stayed 22 Jan, 2025</span>
+                  <div class="stars" role="img" aria-label="Rating: 4 out of 5 stars">
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                  </div>
+                </div>
+                <!-- /.reviews-slider__profile -->
+                <p class="reviews-slider__text">
+                  Гав! Ой, то есть мяу! Отличное место для кота. Удобные лежанки, отличный сервис. Единственный минус —
+                  мало рыбы. Но я не жадный, всё равно всем советую! 🐾
+                </p>
+              </div>
+              <!-- /.reviews-slider__item -->
+            </div>
+            <!-- /.swiper-slide -->
+            <!-- Slide 4  -->
+            <div class="swiper-slide">
+              <div class="reviews-slider__item">
+                <div class="reviews-slider__profile">
+                  <img src="img/reviews-avatar4.jpeg" alt="Photo: cat" class="reviews-slider__avatar" />
+                  <h3 class="reviews-slider__username">O4ko borgii</h3>
+                  <span class="reviews-slider__date">Stayed 3 Dec, 20263</span>
+                  <div class="stars" role="img" aria-label="Rating: 5 out of 5 stars">
+                    <svg class="stars_item" width="8" height="8" aria-hidden="true" focusable="false">
+                      <use href="#star"></use>
+                    </svg>
+                  </div>
+                </div>
+                <!-- /.reviews-slider__profile -->
+                <p class="reviews-slider__text">Подстрелили</p>
+              </div>
+              <!-- /.reviews-slider__item -->
+            </div>
+            <!-- /.swiper-slide -->
+          </div>
+          <!-- /.swiper-wrapper -->
 
+          <button class="reviews-slider__button reviews-slider__button--prev" type="button"></button>
+          <button class="reviews-slider__button reviews-slider__button--next" type="button"></button>
+        </div>
+        <!-- /.reviews-slider -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "format": "prettier --write \"**/*.{html,css,js}\"",
+    "format:html": "prettier --write \"*.html\"",
+    "sass:build": "sass sass/style.sass css/style.css",
+    "sass:clean": "perl -pi -e 's/[ \\t]+$//' sass/*.sass sass/blocks/*.sass",
+    "sass:fix": "sass-lint-auto-fix \"sass/**/*.sass\" -c .sass-lint-auto-fix.yml --config-sass-lint .sass-lint.yml && npm run sass:clean",
+    "sass:lint": "sass-lint -c .sass-lint.yml -v -q"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "sass": "^1.89.2",
+    "sass-lint": "^1.13.1",
+    "sass-lint-auto-fix": "^0.21.2"
+  }
+}
