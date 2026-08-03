@@ -1034,18 +1034,23 @@ template {
   margin-bottom: 3px;
 }
 .footer__contact-details .footer__item {
-  display: grid;
-  grid-template-columns: 24px minmax(0, 1fr);
-  -moz-column-gap: 18px;
-       column-gap: 18px;
-  align-items: start;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
 }
-.footer__contact-icon {
+.footer__contact-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 24px;
   width: 24px;
   height: 24px;
+}
+.footer__contact-icon {
+  max-width: 24px;
+  max-height: 24px;
   -o-object-fit: contain;
      object-fit: contain;
-  justify-self: center;
 }
 .footer__contact-text {
   display: block;
@@ -1054,6 +1059,9 @@ template {
 .footer__link {
   text-decoration: none;
   color: inherit;
+}
+.footer__link:hover {
+  color: rgb(236, 31, 70);
 }
 .footer__social-network {
   grid-row: 2/3;

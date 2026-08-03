@@ -43,21 +43,28 @@
     &:not(:last-child)
       margin-bottom: 3px
   &__contact-details &__item
-    display: grid
-    grid-template-columns: 24px minmax(0, 1fr)
-    column-gap: 18px
-    align-items: start
-  &__contact-icon
+    display: flex
+    align-items: flex-start
+    gap: 18px
+  &__contact-icon-wrapper
+    display: flex
+    justify-content: center
+    align-items: center
+    flex: 0 0 24px
     width: 24px
     height: 24px
+  &__contact-icon
+    max-width: 24px
+    max-height: 24px
     object-fit: contain
-    justify-self: center
   &__contact-text
     display: block
     min-width: 0
   &__link
     text-decoration: none
     color: inherit
+    &:hover
+      color: rgba(236, 31, 70, 1)
   &__social-network
     grid-row: 2 / 3
     grid-column: 3 / 5
