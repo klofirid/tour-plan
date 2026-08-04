@@ -66,9 +66,55 @@
   .container
     max-width: 576px
     width: 92%
+  body
+    padding-top: 78px
   .navbar
-    &_search, &_user, &-menu
+    &-mobile
+      &_fixed
+        position: fixed
+        left: 0
+        top: 0
+        right: 0
+        z-index: 10
+    &-bottom
       display: none
+      position: fixed
+      left: 0
+      right: 0
+      bottom: 0
+      top: 78px
+      &--visible
+        display: block
+    &_search, &_user
+      &--mobile
+        &_hidden
+          display: none
+        &_visible
+          display: flex
+    &_search
+      &--mobile
+        &_visible
+          width: 100%
+          max-width: 340px
+          margin: 0 auto
+          .search_input
+            width: 100%
+    &_user
+      &--mobile
+        &_visible
+          justify-content: center
+          margin-bottom: 28px
+          .user_name
+            color: $light
+    &-menu
+      flex-direction: column
+      &_item
+        margin-bottom: 28px
+        &--mobile
+          &_visible
+            display: block
+
+
   .menu
     &-button
       display: flex

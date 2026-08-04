@@ -38,26 +38,26 @@
       </symbol>
     </svg>
 
-    <header class="navbar">
+    <header class="navbar navbar-mobile_fixed">
       <div class="container">
         <div class="navbar-top">
           <a href="a" class="logo">
             <img src="img/horizont-logo.svg" alt="logo: Best Tour Plan" class="logo_image" />
           </a>
 
-          <form action="#" class="search navbar_search">
+          <form action="#" class="search navbar_search navbar_search--mobile_hidden">
             <input type="text" class="search_input" placeholder="Search Location" />
             <button class="search_button">
               <img src="img/search.svg" alt="Icon: Search" />
             </button>
           </form>
 
-          <a href="#" class="user navbar_user">
+          <a href="#" class="user navbar_user navbar_user--mobile_hidden">
             <img src="img/user_avatar.jpg" alt="Avatar: Nathan" class="user_avatar" />
             <span class="user_name">Nathan</span>
           </a>
           <!-- /.user -->
-          <button class="menu-button navbar-top_menu-button">
+          <button class="menu-button navbar-top_menu-button" type="button" aria-label="Open menu" aria-expanded="false">
             <span class="menu-button_line"></span>
             <span class="menu-button_line"></span>
             <span class="menu-button_line"></span>
@@ -70,6 +70,20 @@
       <div class="navbar-bottom">
         <div class="container">
           <ul class="navbar-menu">
+            <li class="navbar-menu_item navbar-menu_item--mobile_visible">
+              <a href="#" class="user navbar_user navbar_user--mobile_visible">
+                <img src="img/user_avatar.jpg" alt="Avatar: Nathan" class="user_avatar" />
+                <span class="user_name">Nathan</span>
+              </a>
+            </li>
+            <li class="navbar-menu_item navbar-menu_item--mobile_visible">
+              <form action="#" class="search navbar_search navbar_search--mobile_visible">
+                <input type="text" class="search_input" placeholder="Search Location" />
+                <button class="search_button">
+                  <img src="img/search.svg" alt="Icon: Search" />
+                </button>
+              </form>
+            </li>
             <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">All Deals</a></li>
             <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">Hotels</a></li>
             <li class="navbar-menu_item"><a href="#" class="navbar-menu_link">Activities</a></li>

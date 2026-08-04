@@ -51,3 +51,12 @@ const reviewsSwiper = new Swiper(".reviews-slider", {
   observer: true,
   observeParents: true,
 });
+var menuButton = document.querySelector(".menu-button");
+var navbarBottom = document.querySelector(".navbar-bottom");
+
+if (menuButton && navbarBottom) {
+  menuButton.addEventListener("click", function () {
+    navbarBottom.classList.toggle("navbar-bottom--visible");
+    menuButton.setAttribute("aria-expanded", navbarBottom.classList.contains("navbar-bottom--visible"));
+  });
+}
